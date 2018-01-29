@@ -1,6 +1,8 @@
 #ifndef SEQUENCE_LIST_H_
 #define SEQUENCE_LIST_H_
 #include "common.h"
+#define LIST_INIT_SIZE 10
+#define LISTINCREMENT 2
 
 typedef struct
 {
@@ -9,6 +11,12 @@ typedef struct
     int listsize;
 } SqList;
 
-Status InitList(SqList * L,int i);
+Status InitList(SqList * L);
+Status ListInsert(SqList * L,int i,ElemType e);
+Status ListTraverse(SqList L,void (*vi)(ElemType *));
+int ListLength(SqList L);
+Status GetElem(SqList L,int i,ElemType * e);
+int LocateElem(SqList L,ElemType e,Status (*compare)(ElemType,ElemType));
+Status equal(ElemType,ElemType);
 
 #endif // SEQUENCE_LIST_H_

@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1517220511 source:f:\c_study\data_structure_c\chapter_1\linear_list\main.c
+1517279146 source:f:\c_study\data_structure_c\chapter_1\linear_list\main.c
 	<stdio.h>
 	<stdlib.h>
 	"sequence_list.h"
 
-1517219826 f:\c_study\data_structure_c\chapter_1\linear_list\sequence_list.h
+1517277099 f:\c_study\data_structure_c\chapter_1\linear_list\sequence_list.h
 	"common.h"
 
 1517219951 f:\c_study\data_structure_c\chapter_1\linear_list\common.h
@@ -12,7 +12,7 @@
 	<stdlib.h>
 	<math.h>
 
-1517220322 source:f:\c_study\data_structure_c\chapter_1\linear_list\sequence_list.c
+1517303775 source:f:\c_study\data_structure_c\chapter_1\linear_list\sequence_list.c
 	"common.h"
 	"sequence_list.h"
 

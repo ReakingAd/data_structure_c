@@ -18,5 +18,6 @@ int ListLength(SqList L);
 Status GetElem(SqList L,int i,ElemType * e);
 int LocateElem(SqList L,ElemType e,Status (*compare)(ElemType,ElemType));
 Status equal(ElemType,ElemType);
+void MergeList(SqList La,SqList Lb,SqList * Lc);
 
 #endif // SEQUENCE_LIST_H_

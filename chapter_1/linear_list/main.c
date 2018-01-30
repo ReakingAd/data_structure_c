@@ -54,8 +54,35 @@ int algo_2_1_main()
     ListTraverse(La,print);
     return 0;
 }
+int algo_2_2_main()
+{
+    SqList La,Lb,Lc;
+    Status s;
+    int i;
+    s = InitList(&La);
+    if( s == 1 )
+    {
+        for(i = 1;i <= 5;i++)
+            ListInsert(&La,i,i);
+    }
+    ListTraverse(La,print);
+    s = InitList(&Lb);
+    if( s == 1 )
+    {
+        for(i = 1;i <= 5;i++)
+            ListInsert(&Lb,i,i * 2);
+    }
+    ListTraverse(Lb,print);
+    s = InitList(&Lc);
+    if( s != 1 )
+        exit(ERROR);
+    MergeList(La,Lb,&Lc);
+    ListTraverse(Lc,print);
+    return OK;
+}
 int main()
 {
-    algo_2_1_main();
+//    algo_2_1_main();
+    algo_2_2_main();
     return 0;
 }

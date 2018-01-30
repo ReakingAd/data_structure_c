@@ -2,6 +2,7 @@
 #include "sequence_list.h"
 
 /**
+ * 算法2.3
  * 初始化一个空的顺序线性表
  */
 Status InitList(SqList * L)
@@ -94,4 +95,44 @@ Status equal(ElemType e1,ElemType e2)
         return TRUE;
     else
         return FALSE;
+}
+/**
+ * 已知：线性表LA，LB中的元素按值非递减有序排列。
+ * 操作结果：将LA，LB中的元素归并到新的线性表LC中，且元素仍然按值非递减排列
+ */
+void MergeList(SqList La,SqList Lb,SqList * Lc)
+{
+    Status s = InitList(Lc);
+    if( s != 1 )
+        exit(ERROR);
+    int i = 1,j = 1;
+    int k = 1;
+    ElemType ai,bj;
+    while( i <= La.length && j <= Lb.length )
+    {
+        GetElem(La,i,&ai);
+        GetElem(Lb,j,&bj);
+        if( ai <= bj )
+        {
+            ListInsert(Lc,k++,ai);
+            i++;
+        }
+        else
+        {
+            ListInsert(Lc,k++,bj);
+            j++;
+        }
+    }
+    while( i <= La.length )
+    {
+        GetElem(La,i,&ai);
+        ListInsert(Lc,k++,ai);
+        i++;
+    }
+    while( j <= Lb.length )
+    {
+        GetElem(Lb,j,&bj);
+        ListInsert(Lc,k++,bj);
+        j++;
+    }
 }

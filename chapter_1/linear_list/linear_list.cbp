@@ -31,9 +31,14 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="common.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="sequence_list.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="sequence_list.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

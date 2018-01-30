@@ -3,23 +3,6 @@
 #include "sequence_list.h"
 
 /**
- * 算法2.1
- * 合并两个顺序线性表La，Lb。将Lb中存在、La中不存在的结点，插入到La的末尾
- */
-void Union(SqList * La,SqList Lb)
-{
-    int i;
-    int La_len = ListLength(*La);
-    int Lb_len = ListLength(Lb);
-    ElemType e;
-    for( i = 1;i <= Lb_len;i++ )
-    {
-        GetElem(Lb,i,&e);
-        if( !LocateElem(*La,e,equal) )
-            ListInsert(La,++La_len,e);
-    }
-}
-/**
  * 供ListTraverse()使用，打印线性表所存储的数据
  */
 void print(ElemType * e)
@@ -54,6 +37,9 @@ int algo_2_1_main()
     ListTraverse(La,print);
     return 0;
 }
+/**
+ * 算法 2.2 的测试函数
+ */
 int algo_2_2_main()
 {
     SqList La,Lb,Lc;
@@ -80,9 +66,63 @@ int algo_2_2_main()
     ListTraverse(Lc,print);
     return OK;
 }
+/**
+ * 算法2.3 测试函数
+ */
+int algo_2_3_main()
+{
+    SqList L;
+    Status s = InitList(&L);
+    if( s == 1 )
+        printf("Initialize success.\n");
+    else
+        printf("Initialize failed.\n");
+    return OK;
+}
+/**
+ * 算法2.4 测试函数
+ */
+int algo_2_4_main()
+{
+    SqList L;
+    Status s = InitList(&L);
+    if( s != 1 )
+        exit(ERROR);
+    ListInsert(&L,1,2);
+    printf("L长度=%d\n",L.length);
+    printf("L元素包括：\n");
+    ListTraverse(L,print);
+    ListInsert(&L,2,4);
+    printf("L长度=%d\n",L.length);
+    printf("L元素包括：\n");
+    ListTraverse(L,print);
+    return OK;
+}
+/**
+ * 算法2.5 测试函数
+ */
+int algo_2_5_main()
+{
+    SqList L;
+    Status s = InitList(&L);
+    if( s != 1)
+        exit(ERROR);
+    int i;
+    ElemType e;
+    for( i = 1 ; i <= 5;i++ )
+        ListInsert(&L,i,i);
+    ListDelete(&L,2,&e);
+    printf("删除后，线性表为：\n");
+    ListTraverse(L,print);
+    printf("被删除元素是%d",e);
+    return OK;
+}
 int main()
 {
 //    algo_2_1_main();
-    algo_2_2_main();
+//    algo_2_2_main();
+//    algo_2_3_main();
+//    algo_2_4_main();
+    algo_2_5_main();
     return 0;
 }

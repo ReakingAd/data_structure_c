@@ -15,7 +15,8 @@ Status InitList(SqList * L)
     return OK;
 }
 /**
- * 在顺序线性表的指定个位置，插入一个新结点
+ * 算法2.4
+ * 在顺序线性表的指定个位置，插入一个新元素
  */
 Status ListInsert(SqList * L,int i,ElemType e)
 {
@@ -29,7 +30,7 @@ Status ListInsert(SqList * L,int i,ElemType e)
             exit(OVERFLOW);
         L -> listsize += LISTINCREMENT;
     }
-    q = (L -> elem) + i - 1; // 要插入新结点的位置
+    q = (L -> elem) + i - 1; // 要插入新元素的位置
     for( p = (L -> elem) + (L -> length) - 1 ;p >= q;p-- )
     {
         *(p + 1) = *p;
@@ -39,7 +40,7 @@ Status ListInsert(SqList * L,int i,ElemType e)
     return OK;
 }
 /**
- * 遍历顺序线性表，对每一个结点调用函数vi
+ * 遍历顺序线性表，对每一个元素调用函数vi
  */
 Status ListTraverse(SqList L,void (*vi)(ElemType *))
 {
@@ -96,7 +97,26 @@ Status equal(ElemType e1,ElemType e2)
     else
         return FALSE;
 }
+
 /**
+ * 算法2.1
+ * 合并两个顺序线性表La，Lb。将Lb中存在、La中不存在的元素，插入到La的末尾
+ */
+void Union(SqList * La,SqList Lb)
+{
+    int i;
+    int La_len = ListLength(*La);
+    int Lb_len = ListLength(Lb);
+    ElemType e;
+    for( i = 1;i <= Lb_len;i++ )
+    {
+        GetElem(Lb,i,&e);
+        if( !LocateElem(*La,e,equal) )
+            ListInsert(La,++La_len,e);
+    }
+}
+/**
+ * 算法2.2
  * 已知：线性表LA，LB中的元素按值非递减有序排列。
  * 操作结果：将LA，LB中的元素归并到新的线性表LC中，且元素仍然按值非递减排列
  */
@@ -135,4 +155,21 @@ void MergeList(SqList La,SqList Lb,SqList * Lc)
         ListInsert(Lc,k++,bj);
         j++;
     }
+}
+/**
+ * 算法2.5
+ * 删除先行表L中的第i个元素，并把被删除的元素存入参数e
+ */
+Status ListDelete(SqList * L,int i,ElemType * e)
+{
+    if( i < 1 || i > L -> length )
+        exit(OVERFLOW);
+    ElemType * p = NULL,* q = NULL;
+    p = L -> elem;
+    q = p + i - 1; // 指针，指向要被删除的元素的
+    *e = *q;
+    for(++q;q <= p + L -> length - 1;q++)
+        *(q-1) = *q;
+    L -> length--;
+    return OK;
 }

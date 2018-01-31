@@ -71,6 +71,7 @@ Status GetElem(SqList L,int i,ElemType * e)
     return OK;
 }
 /**
+ * 算法2.6
  * 获取执行数据在线性表中的存储位置。如果不存在则返回0
  */
 int LocateElem(SqList L,ElemType e,Status (*compare)(ElemType,ElemType))

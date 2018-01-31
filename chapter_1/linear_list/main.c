@@ -117,12 +117,31 @@ int algo_2_5_main()
     printf("被删除元素是%d",e);
     return OK;
 }
+/**
+ * 算法2.6测试函数
+ */
+int algo_2_6_main()
+{
+    SqList L;
+    Status s = InitList(&L);
+    int j,pos;
+    if( s == 1 )
+    {
+        for( j = 1;j <= 5;j++ )
+            ListInsert(&L,j,j * 2);
+    }
+    printf("La=\n");
+    ListTraverse(L,print);
+    pos = LocateElem(L,4,equal);
+    printf("position of %d = %d",4,pos);
+    return OK;
+}
 int main()
 {
 //    algo_2_1_main();
 //    algo_2_2_main();
 //    algo_2_3_main();
 //    algo_2_4_main();
-    algo_2_5_main();
+//    algo_2_5_main();    algo_2_6_main();
     return 0;
 }

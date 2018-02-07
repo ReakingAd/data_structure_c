@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1517997909 source:/home/ltvieri/git-repos/data_structure_c/chapter_1/linked_list/main.c
+	<stdio.h>
+	<stdlib.h>
+	"common.h"
+	"linked_list.h"
+
+1517997649 source:/home/ltvieri/git-repos/data_structure_c/chapter_1/linked_list/linked_list.c
+	"common.h"
+	"linked_list.h"
+
+1517992806 /home/ltvieri/git-repos/data_structure_c/chapter_1/linked_list/common.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1517997487 /home/ltvieri/git-repos/data_structure_c/chapter_1/linked_list/linked_list.h
+	"common.h"
+

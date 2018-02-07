@@ -158,6 +158,36 @@ void MergeList(SqList La,SqList Lb,SqList * Lc)
     }
 }
 /**
+ * 算法2.7
+ * 功能同算法2.2。不同实现，时间复杂度不同
+ */
+void MergeList2(SqList La,SqList Lb,SqList * Lc)
+{
+    ElemType * pa,* pa_last,* pb,* pb_last,*pc;
+    pa = La.elem;
+    pb = Lb.elem;
+    (*Lc).listsize = (*Lc).length = La.length + Lb.length; // 不用InitList()创建表Lc
+    pc = (*Lc).elem = (ElemType *)malloc( (*Lc).listsize * sizeof(ElemType) );
+    if( !(*Lc).elem )
+        exit(OVERFLOW); // 存储分配失败
+    pa_last = La.elem + La.length - 1;
+    pb_last = Lb.elem + Lb.length - 1;
+    while( pa <= pa_last && pb <= pb_last ) // 表La和表Lb均非空
+    {
+        // 归并
+        if( *pa <= *pb )
+            *pc++ = *pa++;
+        else
+            *pc++ = *pb++;
+    }
+    while( pa <= pa_last ) // 表La非空且表Lb空
+        *pc++ = *pa++; // 插入La的剩余元素
+    while( pb <= pb_last )
+    {
+        *pc++ = *pb++;
+    }
+}
+/**
  * 算法2.5
  * 删除先行表L中的第i个元素，并把被删除的元素存入参数e
  */

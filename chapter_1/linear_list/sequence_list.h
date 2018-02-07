@@ -19,6 +19,7 @@ Status GetElem(SqList L,int i,ElemType * e);
 int LocateElem(SqList L,ElemType e,Status (*compare)(ElemType,ElemType));
 Status equal(ElemType,ElemType);
 void MergeList(SqList La,SqList Lb,SqList * Lc);
+void MergeList2(SqList La,SqList Lb,SqList * Lc);
 void Union(SqList * La,SqList Lb);
 Status ListDelete(SqList * L,int i,ElemType * e);
 #endif // SEQUENCE_LIST_H_

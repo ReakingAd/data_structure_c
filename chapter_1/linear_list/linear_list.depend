@@ -16,3 +16,20 @@
 	"common.h"
 	"sequence_list.h"
 
+1517971303 source:/home/ltvieri/git-repos/data_structure_c/chapter_1/linear_list/main.c
+	<stdio.h>
+	<stdlib.h>
+	"sequence_list.h"
+
+1517970254 /home/ltvieri/git-repos/data_structure_c/chapter_1/linear_list/sequence_list.h
+	"common.h"
+
+1517886121 /home/ltvieri/git-repos/data_structure_c/chapter_1/linear_list/common.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1517971351 source:/home/ltvieri/git-repos/data_structure_c/chapter_1/linear_list/sequence_list.c
+	"common.h"
+	"sequence_list.h"
+

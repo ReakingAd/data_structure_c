@@ -136,12 +136,35 @@ int algo_2_6_main()
     printf("position of %d = %d",4,pos);
     return OK;
 }
-int main()
+/**
+ * À„∑®2.7≤‚ ‘∫Ø ˝
+ */
+int algo_2_7_main()
+{
+    SqList La,Lb,Lc;
+    Status i;
+    int j;
+    i = InitList(&La);
+    if( i == 1 )
+        for(j = 1;j <= 5;j++)
+            ListInsert(&La,j,j);
+    ListTraverse(La,print);
+    i = InitList(&Lb);
+    if( i == 1 )
+        for(j = 1;j <= 5;j++)
+            ListInsert(&Lb,j,j * 2);
+    ListTraverse(Lb,print);
+    MergeList2(La,Lb,&Lc);
+    ListTraverse(Lc,print);
+    return OK;
+}
+int main(int argc,char *argv[])
 {
 //    algo_2_1_main();
 //    algo_2_2_main();
 //    algo_2_3_main();
 //    algo_2_4_main();
-//    algo_2_5_main();    algo_2_6_main();
+//    algo_2_5_main();//    algo_2_6_main();
+    algo_2_7_main();
     return 0;
 }

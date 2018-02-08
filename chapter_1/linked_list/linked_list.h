@@ -13,7 +13,8 @@ struct LNode
 typedef struct LNode * LinkedList; // 定义链表为指向结点的指针。
 
 Status InitList(LinkedList *);
-Status ListInsert(LinkedList,int,ElemType);
+Status ListInsert(LinkedList * L,int i,ElemType);
+Status ListInsert2(LinkedList L,int i,ElemType);
 Status ListTraverse(LinkedList L,void (*vi)(ElemType));
 void visit(ElemType);
 #endif

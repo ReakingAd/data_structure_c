@@ -130,11 +130,89 @@ int algo_2_11_main2()
         ListTraverse(L,visit);
     return 0;
 }
+/**
+ * 算法2.12 测试函数
+ */
+int algo_2_12_main()
+{
+    LinkedList La,Lb,Lc;
+    Status s;
+    int j;
+    s = InitList(&La);
+    if( s == 1 )
+        for(j = 1;j <= 5;j++)
+            ListInsert(&La,j,j);
+    ListTraverse(La,visit);
+    s = InitList(&Lb);
+    if( s == 1 )
+        for(j = 1;j <= 5;j++)
+            ListInsert(&Lb,j,j * 2);
+    ListTraverse(Lb,visit);
+//    s = InitList(&Lc);
+    MergeList(&La,&Lb,&Lc);
+    printf("La addr=%p\n",&La);
+    printf("La=");
+    ListTraverse(La,visit);
+    printf("Lc addr=%p\n",&Lc);
+    printf("Lc=");
+    ListTraverse(Lc,visit);
+    return 0;
+}
+int test()
+{
+   LinkedList * La,* Lb;
+   LinkedList Lc;
+   MergeList(La,Lb,&Lc);
+   return 0;
+}
 int main()
 {
 //    algo_2_9_main();
 //    algo_2_8_main();
 //    algo_2_10_main();
-    algo_2_11_main();
+//    algo_2_11_main();
+//    algo_2_12_main();
+    test();
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

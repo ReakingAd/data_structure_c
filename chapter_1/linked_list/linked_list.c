@@ -142,6 +142,35 @@ Status CreateList2(LinkedList * L,int n)
     p -> next = NULL;
     return OK;
 }
+/**
+ * 算法2.12
+ * 已知单链线性表La和Lb的元素按值非递减排列。归并La和Lb得到新的单链线性表Lc,
+ * Lc的元素也按值非递减排列
+ */
+void MergeList(LinkedList * La,LinkedList * Lb,LinkedList * Lc)
+{
+    LinkedList pa = (*La) -> next,pb = (*Lb) -> next,pc;
+    *Lc = pc = *La; // La的头结点作为Lc的头结点。
+//    *Lc = pc = (LinkedList)malloc( sizeof(struct LNode) );
+    while( pa && pb )
+    {
+        if( pa -> data <= pb -> data )
+        {
+            pc -> next = pa;
+            pc = pa; // 等价于 pc = pc -> next;
+            pa = pa -> next;
+        }
+        else
+        {
+            pc -> next = pb;
+            pc = pb;
+            pb = pb -> next;
+        }
+    }
+    pc -> next = pa ? pa : pb;
+    free(*Lb); // 释放Lb的头结点
+//    Lb = NULL; // 讲Lb的头指针的指针置为NULL
+}
 
 
 

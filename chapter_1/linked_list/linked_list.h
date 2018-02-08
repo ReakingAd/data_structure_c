@@ -21,4 +21,5 @@ Status GetElem(LinkedList,int,ElemType *);
 Status ListDelete(LinkedList *,int,ElemType *);
 Status CreateList(LinkedList *,int);
 Status CreateList2(LinkedList *,int);
+void MergeList(LinkedList *,LinkedList *,LinkedList *);
 #endif

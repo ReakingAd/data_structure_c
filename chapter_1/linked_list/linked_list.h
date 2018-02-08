@@ -17,4 +17,8 @@ Status ListInsert(LinkedList * L,int i,ElemType);
 Status ListInsert2(LinkedList L,int i,ElemType);
 Status ListTraverse(LinkedList L,void (*vi)(ElemType));
 void visit(ElemType);
+Status GetElem(LinkedList,int,ElemType *);
+Status ListDelete(LinkedList *,int,ElemType *);
+Status CreateList(LinkedList *,int);
+Status CreateList2(LinkedList *,int);
 #endif

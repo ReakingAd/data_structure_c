@@ -158,13 +158,6 @@ int algo_2_12_main()
     ListTraverse(Lc,visit);
     return 0;
 }
-int test()
-{
-   LinkedList * La,* Lb;
-   LinkedList Lc;
-   MergeList(La,Lb,&Lc);
-   return 0;
-}
 int main()
 {
 //    algo_2_9_main();

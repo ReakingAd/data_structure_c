@@ -169,7 +169,7 @@ void MergeList(LinkedList * La,LinkedList * Lb,LinkedList * Lc)
     }
     pc -> next = pa ? pa : pb;
     free(*Lb); // 释放Lb的头结点
-//    Lb = NULL; // 讲Lb的头指针的指针置为NULL
+    Lb = NULL;
 }
 
 

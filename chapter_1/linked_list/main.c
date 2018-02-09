@@ -171,8 +171,7 @@ int main()
 //    algo_2_8_main();
 //    algo_2_10_main();
 //    algo_2_11_main();
-//    algo_2_12_main();
-    test();
+    algo_2_12_main();
     return 0;
 }
 

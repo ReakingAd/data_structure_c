@@ -10,5 +10,7 @@ struct component
 typedef struct component SLinkedList[MAXSIZE];
 void difference(SLinkedList space,int *S);
 void InitSpace(SLinkedList);
-Status ListInsert(SLinkedList,int,int,ElemType);
+int Malloc(SLinkedList);
+void Free(SLinkedList,int);
+Status ListTraverse(SLinkedList,int,void(*vi)(ElemType));
 #endif

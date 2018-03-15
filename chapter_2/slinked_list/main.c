@@ -3,7 +3,7 @@
 #include <string.h>
 #include "slinked_list.h"
 
-int main()
+int main_test()
 {
     SLinkedList s = {
         {"",1},{"ZHAO",2},{"QIAN",3},{"SUN",4},{"LI",5},{"ZHOU",6},{"WU",7},{"ZHENG",8},{"WANG",0}
@@ -27,5 +27,23 @@ int main()
         i = s[i].cur;
     }
     printf("\n");
+    return 0;
+}
+
+void visit(ElemType c)
+{
+    printf("%c",c);
+}
+int algo_2_17_main()
+{
+    int k;
+    SLinkedList s;
+    difference(s,&k);
+    ListTraverse(s,k,visit);
+}
+int main()
+{
+//    main_test();
+    algo_2_17_main();
     return 0;
 }

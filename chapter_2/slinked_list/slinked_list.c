@@ -3,6 +3,7 @@
 #include "string.h"
 /* 一个数组可生成若干个静态链表的基本操作（12个）*/
 /**
+ * 算法2.14
  * 将一维数组L中各元素链成一个备用链表,L[0].cur为头指针。“0”表示空指针
  */
 void InitSpace(SLinkedList L)
@@ -15,6 +16,27 @@ void InitSpace(SLinkedList L)
     L[MAXSIZE - 1].cur = 0;
 };
 /**
+ * 算法2.15
+ * 若备用链表非空，则返回分配的结点下标（备用链表的第一个结点），否则返回0
+ */
+int Malloc(SLinkedList space)
+{
+    int i = space[0].cur;
+    if(i) // 备用链表非空
+        space[0].cur = space[i].cur; // 备用链表的头结点指向原备用链表的第二个结点
+    return i; // 返回新开辟结点的坐标
+}
+/**
+ * 算法2.16
+ * 将下标为k的空闲结点回收到备用链表（成为备用链表的第一个结点）
+ */
+void Free(SLinkedList space,int k)
+{
+    space[k].cur = space[0].cur; // 回收结点的“游标”指向备用链表的第一个结点
+    space[0].cur = k;
+}
+/**
+ * 算法2.17
  * 一次输入集合A和B的元素，在一位数组space中建立表示集合(A-B)u(B-A)的静态链表，S为其头指针。
  * 假设备用空间足够大，space[0].cur为备用空间的头指针
  */
@@ -30,7 +52,7 @@ void difference(SLinkedList space,int *S)
     printf("请输入集合A的元素（共%d个）\n",m);
     for(j=1;j<=m;j++) // 建立集合A的链表
     {
-        printf("in first loop==%d\n",j);
+//        printf("in first loop==%d\n",j);
         i = Malloc(space); // 分配结点
         scanf("%c%*c",&space[i].data); // 输入A的元素值
         space[r].cur = i; // 插入到表尾
@@ -64,24 +86,6 @@ void difference(SLinkedList space,int *S)
         }
     }
 };
-/**
- * 若备用链表非空，则返回分配的结点下标（备用链表的第一个结点），否则返回0
- */
-int Malloc(SLinkedList space)
- {
-    int i = space[0].cur;
-    if(i) // 备用链表非空
-        space[0].cur = space[i].cur; // 备用链表的头结点指向原备用链表的第二个结点
-    return i; // 返回新开辟结点的坐标
- }
- /**
-  * 将下表为k的空闲结点回收到备用链表（成为备用链表的第一个结点）
-  */
- void Free(SLinkedList space,int k)
- {
-    space[k].cur = space[0].cur; // 回收结点的“游标”指向备用链表的第一个结点
-    space[0].cur = k;
- }
  /**
   * 依次对L中表头位序为n的链表的每个数据元素，调用函数vi()。一旦vi()失败，则操作失败
   */

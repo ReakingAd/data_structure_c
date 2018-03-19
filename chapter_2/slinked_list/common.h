@@ -8,4 +8,5 @@
 #define OK 1
 #define ERROR 0
 #define N 6 // 字符串长度
-typedef char ElemType[N]; // 每个元素都是一个字符，总共有N个字符。也就是长度为N的字符串
+//typedef char ElemType[N]; // main_test()所使用的类型定义。每个元素都是一个字符，总共有N个字符。也就是长度为N的字符串
+typedef char ElemType;

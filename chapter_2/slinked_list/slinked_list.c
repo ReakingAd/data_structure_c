@@ -26,21 +26,21 @@ void difference(SLinkedList space,int *S)
     *S = Malloc(space); // 生成s的头结点
     r = *S; // r指向S的当前最后结点
     printf("请输入集合A和B的元素个数m,n\n");
-    scanf("%d,%d%*c",&m,&n); // ????? %*c 吃点回车符是怎么回事？？？？？
-    printf("请输入集合A的元素（共%d个）",m);
+    scanf("%d,%d%*c",&m,&n); // %*c 吃掉回车符。方法中多次用到这个写法。不吃掉回车符的话会影响程序的执行。还不明白回车符是怎么影响程序执行的。
+    printf("请输入集合A的元素（共%d个）\n",m);
     for(j=1;j<=m;j++) // 建立集合A的链表
     {
+        printf("in first loop==%d\n",j);
         i = Malloc(space); // 分配结点
-        scanf("%c",&space[i].data); // 输入A的元素值
+        scanf("%c%*c",&space[i].data); // 输入A的元素值
         space[r].cur = i; // 插入到表尾
         r = i;
     }
-    scanf("%*c"); // 吃掉回车符
     space[r].cur = 0; // 尾结点的指针为空
-    printf("请输入结合B的元素（共%d个）:",n);
+    printf("请输入集合B的元素（共%d个）:\n",n);
     for(j=1;j<=n;j++) // 依次输入B的元素，若不在当前表中，则插入，否则删除
     {
-        scanf("%c",&b);
+        scanf("%c%*c",&b);
         p = *S;
         k = space[*S].cur; // k指向集合A中的第一个结点
         while( k != space[r].cur && space[k].data != b)
@@ -51,8 +51,7 @@ void difference(SLinkedList space,int *S)
         if( k == space[r].cur )
         { // 当前表中不存在该元素，插入在r所指结点之后，且r的位置不变
             i = Malloc(space);
-//            space[i].data = b;
-            strcpy(space[i].data,b); // ???? 字符串不应该是strcpy()来赋值吗？直接用=可以？？
+            space[i].data = b;
             space[i].cur = space[r].cur;
             space[r].cur = i;
         }

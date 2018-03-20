@@ -13,4 +13,5 @@ void InitSpace(SLinkedList);
 int Malloc(SLinkedList);
 void Free(SLinkedList,int);
 Status ListTraverse(SLinkedList,int,void(*vi)(ElemType));
+void visit(ElemType);
 #endif

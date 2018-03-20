@@ -31,10 +31,6 @@
 //    return 0;
 //}
 
-void visit(ElemType c)
-{
-    printf("%c",c);
-}
 int algo_2_17_main()
 {
     int k;

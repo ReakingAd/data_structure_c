@@ -5,6 +5,7 @@
 /**
  * 算法2.14
  * 将一维数组L中各元素链成一个备用链表,L[0].cur为头指针。“0”表示空指针
+ * 相当于将数组的各个元素使用cur串起来形成链表。此时这个链表为备用链表。
  */
 void InitSpace(SLinkedList L)
 {
@@ -18,6 +19,8 @@ void InitSpace(SLinkedList L)
 /**
  * 算法2.15
  * 若备用链表非空，则返回分配的结点下标（备用链表的第一个结点），否则返回0
+ * 在备用链表中，剔除掉头结点所指向的结点。返回这个被剔除的结点在原数组中的
+ * 下标，可当做“内存地址”使用。
  */
 int Malloc(SLinkedList space)
 {
@@ -29,6 +32,7 @@ int Malloc(SLinkedList space)
 /**
  * 算法2.16
  * 将下标为k的空闲结点回收到备用链表（成为备用链表的第一个结点）
+ * 相当于，将原数组中k位置上的元素，插入到备用链表的第一个结点之后，供下一次Malloc()函数申请使用。
  */
 void Free(SLinkedList space,int k)
 {
@@ -45,14 +49,13 @@ void difference(SLinkedList space,int *S)
     int r,p,m,n,i,j,k;
     ElemType b;
     InitSpace(space); // 初始化备用空间
-    *S = Malloc(space); // 生成s的头结点
-    r = *S; // r指向S的当前最后结点
+    *S = Malloc(space); // 生成S的头结点
+    r = *S; // r指向S的当前最后结点 /* r指向最后一个被分配出来的“内存” */
     printf("请输入集合A和B的元素个数m,n\n");
     scanf("%d,%d%*c",&m,&n); // %*c 吃掉回车符。方法中多次用到这个写法。不吃掉回车符的话会影响程序的执行。还不明白回车符是怎么影响程序执行的。
     printf("请输入集合A的元素（共%d个）\n",m);
     for(j=1;j<=m;j++) // 建立集合A的链表
     {
-//        printf("in first loop==%d\n",j);
         i = Malloc(space); // 分配结点
         scanf("%c%*c",&space[i].data); // 输入A的元素值
         space[r].cur = i; // 插入到表尾
@@ -64,8 +67,8 @@ void difference(SLinkedList space,int *S)
     {
         scanf("%c%*c",&b);
         p = *S;
-        k = space[*S].cur; // k指向集合A中的第一个结点
-        while( k != space[r].cur && space[k].data != b)
+        k = space[*S].cur; // k初始时指向集合A中的第一个结点。通过while循环移动k来遍历集合A，以判断新键入的字母是否在集合A中已经存在
+        while( k != space[r].cur && space[k].data != b) // 修正k值
         { // 在当前表中查找
             p = k;
             k = space[k].cur;
@@ -86,6 +89,10 @@ void difference(SLinkedList space,int *S)
         }
     }
 };
+void visit(ElemType c)
+{
+    printf("%c",c);
+}
  /**
   * 依次对L中表头位序为n的链表的每个数据元素，调用函数vi()。一旦vi()失败，则操作失败
   */

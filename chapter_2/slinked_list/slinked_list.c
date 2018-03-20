@@ -89,6 +89,44 @@ void difference(SLinkedList space,int *S)
         }
     }
 };
+/**
+* 改进算法2.17
+* 过程尽量使用基本操作来进行。
+*/
+int difference2(SLinkedList space)
+{
+    int m,n,i,j,k,S;
+    ElemType b,c;
+    InitSpace( space ); // 初始化备用空间
+    S = InitList(space); // 生成链表S的头结点
+    printf("请输入集合A和B的元素个数m,n:\n");
+    scanf("%d,%d%*c",&m,&n);
+    printf("请输入集合A的元素（共%d）个：\n",m);
+    for(j=1;j<=m;j++)
+    {
+        scanf("%c%*c",&b);
+        ListInsert(space,S,j,b); // 插入到表尾
+    }
+//    scanf("%*c"); // 吃掉回车符？？？？是否删掉就可以？？
+    printf("请输入集合B的元素（共%d）个：\n",n);
+    for(j=1;j<=n;j++) // 依次输入B的元素，若不在当前表中，则插入，否则删除
+    {
+            scanf("%c%*c",&b);
+            k = LocateElem(space,S,b); // k为b的位序
+            if(k) // b在当前表中
+            {
+                PriorElem(space,S,b,&c); // b的前驱为c
+                i = LocateElem(space,S,c); // i为c的位序
+                space[i].cur = space[k].cur; // 将k的指针域付给i的指针域
+                Free(space,k); // 将下表为k的空闲结点回收到备用链表
+            }
+            else
+            {
+                ListInsert(space,S,ListLength(space,S) + 1,b); // 在表尾插入b
+            }
+    }
+    return S;
+}
 void visit(ElemType c)
 {
     printf("%c",c);
@@ -96,8 +134,8 @@ void visit(ElemType c)
  /**
   * 依次对L中表头位序为n的链表的每个数据元素，调用函数vi()。一旦vi()失败，则操作失败
   */
- Status ListTraverse(SLinkedList L,int n,void (*vi)(ElemType))
- {
+Status ListTraverse(SLinkedList L,int n,void (*vi)(ElemType))
+{
     int i = L[n].cur; // 指向第一个元素
     while(i) // 没到静态链表尾
     {
@@ -106,4 +144,78 @@ void visit(ElemType c)
     }
     printf("\n");
     return OK;
- }
+}
+ /**
+  * 构造一个空链表，返回值为空表在数组中的位序
+  * (在原数组中申请一个单位的“内存”，作为新链表的头结点。这个头结点的位序作为返回值返回)
+  */
+int InitList(SLinkedList L)
+{
+    int i;
+    i = Malloc(L); // 调用Malloc(),简化程序
+    L[i].cur = 0;
+    return i;
+}
+/**
+ * 在L中表头位序为n的链表的第i个元素之前插入新的数据元素e
+ */
+Status ListInsert(SLinkedList L,int n,int i,ElemType e)
+{
+    int l,j,k=n; // k 指向表头
+    if( i < 1 || i > ListLength(L,n) + 1)
+        return ERROR;
+    j = Malloc(L); // 申请新单元
+    if(j) // 申请成功
+    {
+        L[j].data = e; // 赋值给新单元
+        for(l=1;l<i;l++) // 移动i-1个元素
+            k = L[k].cur;
+        L[j].cur = L[k].cur;
+        L[k].cur = j;
+        return OK;
+    }
+    return ERROR;
+}
+/**
+ * 返回L中表头位序为n的链表的数据元素个数
+ */
+int ListLength(SLinkedList L,int n)
+{
+    int j = 0,i=L[n].cur; // i 指向第一个元素
+    while(i) // 遍历至静态链表尾
+    {
+        i = L[i].cur; // 指向下一个元素
+        j++;
+    }
+    return j;
+}
+/**
+ * 在L中表头位序为n的静态单链表中查找第1个值为e的元素。若
+ * 找到，则返回它在L中的位序，否则返回0
+ */
+int LocateElem(SLinkedList L,int n,ElemType e)
+{
+    int i = L[n].cur; // i指向静态链表中的第一个结点
+    while(i && L[i].data != e) // 在表中顺链查找（e不能时字符串）
+        i = L[i].cur;
+    return i;
+}
+/**
+ * 若cur_e是此单链表的数据元素，且不是第一个，则用pre_e返回它的前驱，
+ * 否则操作失败，pre_e无定义
+ */
+Status PriorElem(SLinkedList L,int n,ElemType cur_e,ElemType * pre_e)
+{
+    int j,i = L[n].cur; // i 为链表第一个结点的位置
+    do // 向后移动结点
+    {
+            j = i;
+            i = L[i].cur;
+    }while( i && cur_e != L[i].data );
+    if(i) // 找到该元素
+    {
+        *pre_e = L[j].data;
+        return OK;
+    }
+    return ERROR;
+}

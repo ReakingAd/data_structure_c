@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1521528347 source:/home/ltvieri/git-repos/data_structure_c/chapter_2/slinked_list/slinked_list.c
+1521535857 source:/home/ltvieri/git-repos/data_structure_c/chapter_2/slinked_list/slinked_list.c
 	"common.h"
 	"slinked_list.h"
 	"string.h"
 
-1521513531 source:/home/ltvieri/git-repos/data_structure_c/chapter_2/slinked_list/main.c
+1521535781 source:/home/ltvieri/git-repos/data_structure_c/chapter_2/slinked_list/main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -15,6 +15,6 @@
 	<stdlib.h>
 	<math.h>
 
-1521513504 /home/ltvieri/git-repos/data_structure_c/chapter_2/slinked_list/slinked_list.h
+1521534398 /home/ltvieri/git-repos/data_structure_c/chapter_2/slinked_list/slinked_list.h
 	"common.h"
 

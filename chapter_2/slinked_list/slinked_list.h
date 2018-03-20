@@ -14,4 +14,10 @@ int Malloc(SLinkedList);
 void Free(SLinkedList,int);
 Status ListTraverse(SLinkedList,int,void(*vi)(ElemType));
 void visit(ElemType);
+int difference2(SLinkedList); // 改进算法。尽量使用基本操作完成。
+int InitList(SLinkedList);
+Status ListInsert(SLinkedList,int,int,ElemType);
+int ListLength(SLinkedList,int);
+int LocateElem(SLinkedList,int,ElemType);
+Status PriorElem(SLinkedList,int,ElemType,ElemType *);
 #endif

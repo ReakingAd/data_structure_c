@@ -40,9 +40,17 @@ int algo_2_17_main()
     ListTraverse(s,k,visit);
     return 0;
 }
+void algo_2_17_main2()
+{
+    int k;
+    SLinkedList s;
+    k = difference2(s);
+    ListTraverse(s,k,visit);
+}
 int main()
 {
 //    main_test();
-    algo_2_17_main();
+//    algo_2_17_main();
+    algo_2_17_main2();
     return 0;
 }

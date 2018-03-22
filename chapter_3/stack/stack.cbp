@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="linked_list_plus" />
+		<Option title="stack" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/linked_list_plus" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/stack" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/linked_list_plus" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/stack" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,11 +31,6 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="common.h" />
-		<Unit filename="linked_list.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="linked_list.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

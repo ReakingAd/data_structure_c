@@ -41,7 +41,7 @@ Status StackEmpty(SqStack S)
     if( S.top == S.base )
         return TRUE;
     else
-        return TRUE;
+        return FALSE;
 }
 /**
  * 返回S的元素个数，即栈的长度

@@ -77,7 +77,7 @@ Status Push(SqStack * S,SElemType e)
         (*S).top = (*S).base + (*S).stacksize;
         (*S).stacksize += STACKINCREMENT;
     }
-    *(*S).top++ = e; // ？？？？？？运算符优先级
+    *(*S).top++ = e; // 运算符优先级***
     return OK;
 }
 /**
@@ -87,7 +87,7 @@ Status Pop(SqStack * S,SElemType * e)
 {
     if( (*S).top == (*S).base )
         return ERROR;
-    *e = *--(*S).top; // 运算符优先级？？？？？
+    *e = *--(*S).top; // 运算符优先级***
     return OK;
 }
 /**

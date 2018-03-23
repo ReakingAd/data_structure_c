@@ -28,6 +28,6 @@ int main()
     printf("After clear th stack,empty or not:%d(1:empty 0:not empty)\n",StackEmpty(s));printf("The ElemType in this status are:\n");
     StackTraverse(s,visit);
     DestroyStack(&s);
-    printf("After destroy the stack ,s.top = %p s.base = %p,s.stacksize = %d\n",s.top,s.base,s.stacksize); // ????? 怎样打印一个指针地址来这？？？？ %p，nil时什么意思和NULL的区别》？
+    printf("After destroy the stack ,s.top = %p s.base = %p,s.stacksize = %d\n",s.top,s.base,s.stacksize);
     return 0;
 }

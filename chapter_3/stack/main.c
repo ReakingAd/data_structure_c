@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "string.h"
 #include "common.h"
 #include "stack.h"
 Status visit(SElemType e)
@@ -35,31 +36,99 @@ int stack_main()
     return 0;
 }
 /**
- * 算法 3.1
+ * 算法 3.1 数制转换
  * 将键盘键入的非负十进制数字转换成八进制并打印
  */
-void conversion()
+//void conversion()
+//{
+//    int n,e;
+//    SqStack S;
+//    printf("请输入一个非负十进制数字：\n");
+//    scanf("%d",&n);
+//    InitStack( &S );
+//    while( n )
+//    {
+//        Push( &S,n % 8);
+//        n = n / 8;
+//    }
+//    while( !StackEmpty(S) )
+//    {
+//        Pop(&S,&e);
+//        printf("%d",e);
+//    }
+//}
+Status visit_char(SElemType c)
 {
-    int n,e;
+    printf("%c",c);
+    return OK;
+}
+/**
+ * 栈应用3.2.2 括号匹配
+ * 判断键入的括号组合是否符合成对匹配。有效的括号只有()[]
+ */
+void CoupleCheck()
+{
     SqStack S;
-    printf("请输入一个非负十进制数字：\n");
-    scanf("%d",&n);
-    InitStack( &S );
-    while( n )
+    char topC;
+    int State = 0; // 是否正确匹配的标记
+    InitStack(&S);
+    char str[10];
+    printf("请输入待鉴定的括号组合：\n");
+    scanf("%s",str);
+    printf("%c\n",str[8]);
+    int i = 0;
+    while( str[i] != '\0' )
     {
-        Push( &S,n % 8);
-        n = n / 8;
+        switch( str[i] )
+        {
+            case '(':
+                Push(&S,str[i]);
+                State = 0;
+                break;
+            case '[':
+                Push(&S,str[i]);
+                State = 0;
+                break;
+            case ')':
+                GetTop(S,&topC);
+                if( !StackEmpty(S) && topC == '(' )
+                {
+                    Pop(&S,&topC);
+                    State = 1;
+                }
+                else
+                {
+                    Push(&S,str[i]);
+                    State = 0;
+                }
+                break;
+            case ']':
+                GetTop(S,&topC);
+                if( !StackEmpty(S) && topC == '[' )
+                {
+                    Pop(&S,&topC);
+                    State = 1;
+                }
+                else
+                {
+                    Push(&S,str[i]);
+                    State = 0;
+                }
+                break;
+            default :
+                printf("xxxx");
+        }
+        i++;
     }
-    while( !StackEmpty(S) )
-    {
-        Pop(&S,&e);
-        printf("%d",e);
-    }
+    if( StackEmpty(S) && State == 1 )
+        printf("匹配\n");
+    else
+        printf("不匹配\n");
 }
 int main()
 {
 //    stack_main();
-    conversion();
-    printf("test git");
+//    conversion();
+    CoupleCheck();
     return 0;
 }

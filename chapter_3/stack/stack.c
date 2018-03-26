@@ -98,6 +98,6 @@ Status StackTraverse( SqStack S,Status (*visit)(SElemType))
 {
     while( S.top > S.base )
         visit( *S.base++ ); // 运算符优先级？？？？？
-    printf("\n");
+//    printf("\n");
     return OK;
 }

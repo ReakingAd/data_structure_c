@@ -75,7 +75,6 @@ void CoupleCheck()
     char str[10];
     printf("请输入待鉴定的括号组合：\n");
     scanf("%s",str);
-    printf("%c\n",str[8]);
     int i = 0;
     while( str[i] != '\0' )
     {
@@ -125,10 +124,83 @@ void CoupleCheck()
     else
         printf("不匹配\n");
 }
+/**
+ * 算法3.2 行编辑程序
+ */
+//void LineEdit( )
+//{
+//    SqStack S;
+//    InitStack(&S);
+//    char c,pop_c;
+//    c = getchar();
+//    while( c != EOF )
+//    {
+//        while( c != EOF && c != '\n' )
+//        {
+//            printf("in inner while");
+//            switch( c )
+//            {
+//                case '#' :
+//                    Pop(&S,&pop_c);
+//                case '@' :
+//                    ClearStack(&S);
+//                default :
+//                    Push(&S,c);
+//            }
+//            c = getchar();
+//        }
+////        printf("char=%c",c);
+//    }
+//    printf("=========");
+//    StackTraverse(S,visit_char);
+//    ClearStack(&S);
+//    if( c != EOF ) c = getchar();
+//}
+void LineEdit( char buffer[] )
+{
+    SqStack S;
+    InitStack( &S );
+    SElemType e;
+    int i = 0;
+    char ch = buffer[i];
+    while( ch != '\0' )
+    {
+        while( ch != '\0' && ch != '\n' )
+        {
+            switch( ch )
+            {
+                case '#' :
+                    Pop(&S,&e);
+                    break;
+                case '@' :
+                    ClearStack(&S);
+                    break;
+                default :
+                    Push(&S,ch);
+            }
+            ch = buffer[++  i];
+        }
+        if( ch == '\n' )
+        {
+            Push(&S,ch);
+            StackTraverse(S,visit_char);
+            ClearStack(&S);
+            ch = buffer[++i]; // ???????
+        }
+    }
+    if( ch == '\0' )
+    {
+//        printf("out while");
+        StackTraverse(S,visit_char);
+    }
+}
 int main()
 {
 //    stack_main();
 //    conversion();
-    CoupleCheck();
+//    CoupleCheck();
+    char buffer[] = "while(true)kk##\n    putchar(&a)";
+//    printf("%s",buffer);
+    LineEdit( buffer );
     return 0;
 }

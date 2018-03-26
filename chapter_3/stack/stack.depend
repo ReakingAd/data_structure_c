@@ -1,19 +1,19 @@
 # depslib dependency file v1.0
-1521883752 source:/home/ltvieri/git-repos/data_structure_c/chapter_3/stack/main.c
+1522051776 source:/home/ltvieri/git-repos/data_structure_c/chapter_3/stack/main.c
 	<stdio.h>
 	<stdlib.h>
 	"string.h"
 	"common.h"
 	"stack.h"
 
-1521881030 /home/ltvieri/git-repos/data_structure_c/chapter_3/stack/common.h
+1522028975 /home/ltvieri/git-repos/data_structure_c/chapter_3/stack/common.h
 	<stdio.h>
 	<stdlib.h>
 
-1521880469 /home/ltvieri/git-repos/data_structure_c/chapter_3/stack/stack.h
+1521711106 /home/ltvieri/git-repos/data_structure_c/chapter_3/stack/stack.h
 	"common.h"
 
-1521854948 source:/home/ltvieri/git-repos/data_structure_c/chapter_3/stack/stack.c
+1522051800 source:/home/ltvieri/git-repos/data_structure_c/chapter_3/stack/stack.c
 	"common.h"
 	"stack.h"
 	"math.h"

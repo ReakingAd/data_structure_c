@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1522117688 source:/home/ltvieri/git-repos/data_structure_c/chapter_3/queue/main.c
+1522157098 source:/home/ltvieri/git-repos/data_structure_c/chapter_3/queue/main.c
 	"queue.h"
 
-1522117916 source:/home/ltvieri/git-repos/data_structure_c/chapter_3/queue/queue.c
+1522156809 source:/home/ltvieri/git-repos/data_structure_c/chapter_3/queue/queue.c
 	"queue.h"
 
-1522140598 /home/ltvieri/git-repos/data_structure_c/chapter_3/queue/queue.h
+1522155593 /home/ltvieri/git-repos/data_structure_c/chapter_3/queue/queue.h
 	"common.h"
 
-1522117894 /home/ltvieri/git-repos/data_structure_c/chapter_3/queue/common.h
+1522155758 /home/ltvieri/git-repos/data_structure_c/chapter_3/queue/common.h
 	<stdio.h>
 	<stdlib.h>
 	"math.h"

@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1522199608 source:/home/ltvieri/git-repos/data_structure_c/chapter_4/sstring/main.c
+	<stdio.h>
+	<stdlib.h>
+
+1522199768 source:/home/ltvieri/git-repos/data_structure_c/chapter_4/sstring/sstring.c
+	<string.h>
+	"sstring.h"
+
+1522199682 /home/ltvieri/git-repos/data_structure_c/chapter_4/sstring/sstring.h
+	"common.h"
+
+1522199654 /home/ltvieri/git-repos/data_structure_c/chapter_4/sstring/common.h
+	<stdio.h>
+	<stdlib.h>
+

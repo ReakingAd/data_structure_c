@@ -17,3 +17,4 @@ typedef struct {
 
 void PrintListKeys(SqList);
 void InsertSort(SqList *);
+void BInsertSort(SqList *);

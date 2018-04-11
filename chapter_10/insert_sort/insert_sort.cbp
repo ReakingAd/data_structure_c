@@ -31,6 +31,11 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="common.h" />
+		<Unit filename="insert_sort.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="insert_sort.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

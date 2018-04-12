@@ -49,23 +49,33 @@ void BInsertSort(SqList * L)
         L -> r[0] = L -> r[i];
         low = 1;
         high = i -1;
+        /**
+        * mid的计算方式可知，mid总是在中间偏向low方向一个位置。若干次循环后，mid便和low相等了，即mid=low。
+        * 显然此时必须得有mid=low=high
+        * 当循环low=high进行时，如果哨兵<mid则low=mid=high+1如果哨兵>mid则low-1=mid=high
+        * 此时low > higt便跳出了while循环。
+        */
         while( low <= high )
         {
-
-            mid = ( low + high ) / 2; // ?? 为什么这里自动转换成了整数？？？？？效果是直接去掉小数部分
+            mid = ( low + high ) / 2; // 由于mid是行下取证得来，mid最终总会遇到与low相等的时候。
+                                                        // 所以当某次执行玩high=m-1时，high就比low大了，便跳出while循环了。
             if( LT(L -> r[0].key ,L -> r[mid].key ) )   // 在低半区
-            {
                 high = mid - 1;
-            }
-            else low = mid + 1;
-
+            else
+                low = mid + 1;
         }
-
+        /**
+        * 当进行low=high=mid这次循环时，如果哨兵<mid关键字，则可知哨兵应该插入到high左侧。
+        * 但是由于调整了high=mid-1(即high指针左移了一个位置)所以哨兵就应该插入到调整后的high的右侧
+        * 如果哨兵>mid关键字，此时哨兵应该插入high的右侧，由于调整的是low的位置而high并没有变。
+        * 可见，不管最后一次low=high=mid时哨兵与mid关键字大小关系如何，正确的插入位置都是high的右侧紧邻。
+        * 即high+1
+        */
         for(j=i-1;j>=high + 1;--j)
         {
             L -> r[j+1] = L -> r[j]; // 记录后移
         }
-        L -> r[high + 1] = L -> r[0];
+        L -> r[high + 1] = L -> r[0]; // 插入到high+1位置
 
     }
 }

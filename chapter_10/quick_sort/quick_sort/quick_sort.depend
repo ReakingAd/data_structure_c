@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1523610645 source:/home/ltvieri/git-repos/data_structure_c/chapter_10/quick_sort/quick_sort/main.c
+	<stdio.h>
+	<stdlib.h>
+	"quick_sort.h"
+
+1523611475 /home/ltvieri/git-repos/data_structure_c/chapter_10/quick_sort/quick_sort/quick_sort.h
+	"common.h"
+
+1523603448 /home/ltvieri/git-repos/data_structure_c/chapter_10/quick_sort/quick_sort/common.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1523611529 source:/home/ltvieri/git-repos/data_structure_c/chapter_10/quick_sort/quick_sort/quick_sort.c
+	"quick_sort.h"
+

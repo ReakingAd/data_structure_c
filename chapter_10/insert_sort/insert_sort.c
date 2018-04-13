@@ -79,3 +79,29 @@ void BInsertSort(SqList * L)
 
     }
 }
+/**
+ * 算法10.4 子序列的希尔插入排序。供算法10.5 调用
+ */
+ void ShellInsert(SqList * L,int dk)
+ {
+    int i,j;
+    for( i=dk+1;i<=L -> length;++i )
+    {
+        if( LT(L -> r[i].key,L -> r[i-dk].key) )
+        {
+            L -> r[0] = L -> r[i];
+            for( j = i - dk ; j > 0 && LT(L -> r[0].key , L -> r[j].key ); j -= dk )
+                L -> r[j+dk] = L -> r[j]; // 后移
+            L -> r[j+dk] = L -> r[0]; // 插入正确位置
+        }
+    }
+ }
+/**
+ * 算法10.5 希尔排序
+ */
+void ShellSort(SqList * L,int dlta[],int t)
+{
+    int k;
+    for(k=0;k<t;++k)
+        ShellInsert(L,dlta[k]);
+}

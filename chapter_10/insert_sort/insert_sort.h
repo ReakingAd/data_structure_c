@@ -1,3 +1,5 @@
+#ifndef _INSERT_SORT_H_
+#define _INSERT_SORT_H_
 #include "common.h"
 
 #define MAXSIZE 20 // 一个用作示例的小顺序表的最大长度
@@ -17,3 +19,7 @@ typedef struct {
 
 void PrintListKeys(SqList);
 void InsertSort(SqList *);
+void BInsertSort(SqList *);
+void ShellSort(SqList *,int [],int);
+
+#endif

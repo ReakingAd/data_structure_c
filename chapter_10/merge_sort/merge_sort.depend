@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1523930132 source:/home/ltvieri/git-repos/data_structure_c/chapter_10/merge_sort/main.c
+1523953789 source:/home/ltvieri/git-repos/data_structure_c/chapter_10/merge_sort/main.c
 	<stdio.h>
 	<stdlib.h>
 	"merge_sort.h"
 
-1523930141 /home/ltvieri/git-repos/data_structure_c/chapter_10/merge_sort/merge_sort.h
+1523953970 /home/ltvieri/git-repos/data_structure_c/chapter_10/merge_sort/merge_sort.h
 	"common.h"
 
 1523929831 /home/ltvieri/git-repos/data_structure_c/chapter_10/merge_sort/common.h
@@ -12,6 +12,6 @@
 	<stdlib.h>
 	<math.h>
 
-1523930247 source:/home/ltvieri/git-repos/data_structure_c/chapter_10/merge_sort/merge_sort.c
+1523953527 source:/home/ltvieri/git-repos/data_structure_c/chapter_10/merge_sort/merge_sort.c
 	"merge_sort.h"
 

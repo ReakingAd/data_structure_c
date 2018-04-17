@@ -17,5 +17,7 @@ typedef struct {
 } SqList;
 
 void PrintKeys(SqList);
+void Merge(RecType SR[],RecType TR[],int i,int m,int n);
+void MSort(RecType SR[],RecType TR1[],int s,int t);
 #endif
 

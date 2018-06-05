@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1528190178 source:/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/BiTree.c
+	"BiTree.h"
+
+1528188676 /home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/BiTree.h
+	"common.h"
+
+1528188937 /home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/common.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1528188725 source:/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/main.c
+	<stdio.h>
+	<stdlib.h>
+	"BiTree.h"
+

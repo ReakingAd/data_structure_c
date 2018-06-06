@@ -1,4 +1,7 @@
-#include "common.h"
+#ifndef _BITREE_H_
+#define _BITREE_H_
+
+#include "common2.h"
 
 typedef struct BiTNode{
     TElemType data;
@@ -6,4 +9,10 @@ typedef struct BiTNode{
 } BiTNode, * BiTree;
 
 Status InitBiTree(BiTree * );
-Status CreateBiTree(BiTree *);
+void CreateBiTree(BiTree *);
+void PreOrder(BiTree);
+void InOrder(BiTree);
+void InOrder2(BiTree);
+void PostOrder(BiTree);
+
+#endif // _BITREE_H_

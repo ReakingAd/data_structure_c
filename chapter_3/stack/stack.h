@@ -5,6 +5,8 @@
 #define STACKINCREMENT 2
 
 #include "common.h"
+#include "/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/common2.h"
+
 typedef struct
 {
     SElemType * base; // 在构造之前和销毁之后，base的值为NULL

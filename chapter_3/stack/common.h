@@ -8,4 +8,4 @@
 
 typedef int Status;
 //typedef int SElemType; // 进制转换使用
-typedef char SElemType; // 括号匹配使用
+ typedef char SElemType; // 括号匹配使用

@@ -196,11 +196,11 @@ void LineEdit( char buffer[] )
 }
 int main()
 {
-//    stack_main();
+    stack_main();
 //    conversion();
 //    CoupleCheck();
-    char buffer[] = "while(true)kk##\n    putchar(&a)";
+//    char buffer[] = "while(true)kk##\n    putchar(&a)";
 //    printf("%s",buffer);
-    LineEdit( buffer );
+//    LineEdit( buffer );
     return 0;
 }

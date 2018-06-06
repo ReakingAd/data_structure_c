@@ -1,0 +1,66 @@
+# depslib dependency file v1.0
+1528277510 source:/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/BiTree.c
+	"BiTree.h"
+	"chapter_3/stack/stack.h"
+
+1528277794 /home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/BiTree.h
+	"common2.h"
+
+1528188937 /home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/common.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1528275559 source:/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/main.c
+	<stdio.h>
+	<stdlib.h>
+	"BiTree.h"
+
+1528277560 /home/ltvieri/git-repos/data_structure_c/chapter_3/stack/stack.h
+	"common.h"
+	"/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/common2.h"
+
+1528277409 /home/ltvieri/git-repos/data_structure_c/chapter_3/stack/common.h
+	<stdio.h>
+	<stdlib.h>
+
+1522051800 source:/home/ltvieri/git-repos/data_structure_c/chapter_3/stack/stack.c
+	"common.h"
+	"stack.h"
+	"math.h"
+
+1528188937 /home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/common2.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1528297732 source:f:\data_structure_c\chapter_6\bitree\bitree.c
+	"BiTree.h"
+	"chapter_3/stack/stack.h"
+
+1528292626 f:\data_structure_c\chapter_6\bitree\bitree.h
+	"common2.h"
+
+1528297472 f:\data_structure_c\chapter_6\bitree\common2.h
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
+1528296643 source:f:\data_structure_c\chapter_6\bitree\main.c
+	<stdio.h>
+	<stdlib.h>
+	"BiTree.h"
+
+1528292595 source:f:\data_structure_c\chapter_3\stack\stack.c
+	"common.h"
+	"stack.h"
+	"math.h"
+
+1528297232 f:\data_structure_c\chapter_3\stack\common.h
+	<stdio.h>
+	<stdlib.h>
+
+1528297498 f:\data_structure_c\chapter_3\stack\stack.h
+	"chapter_6/BiTree/common2.h"
+	"chapter_6/BiTree/BiTree.h"
+

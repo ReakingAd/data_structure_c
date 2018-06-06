@@ -4,7 +4,11 @@
 #define STACK_INIT_SIZE 10
 #define STACKINCREMENT 2
 
-#include "common.h"
+//#include "common.h"
+#include "chapter_6/BiTree/common2.h"
+#include "chapter_6/BiTree/BiTree.h"
+typedef BiTree SElemType;
+
 typedef struct
 {
     SElemType * base; // 在构造之前和销毁之后，base的值为NULL

@@ -59,14 +59,16 @@ void PreOrder(BiTree T){
     SqStack S;
     Status s = InitStack(&S);
     BiTree p;
-    if( T != NULL ){
-        Push(&S,T);
-        T = T -> lchild;
-    }
-    else{
-        Pop(&S,T);
-        visit(T);
-        T = T -> rchild;
+    while( T != NULL || !StackEmpty(S) ){
+        if( T != NULL ){
+            Push(&S,T);
+            T = T -> lchild;
+        }
+        else{
+            Pop(&S,&T);
+            visit(T);
+            T = T -> rchild;
+        }
     }
  }
  /**

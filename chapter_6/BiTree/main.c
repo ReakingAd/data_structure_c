@@ -7,7 +7,7 @@ void InOrder_main(){
     BiTree T = NULL;
     // 按照教材中图6.8(b)的二叉树，需要依次键入ABC##DE#G##F###
     CreateBiTree(&T);
-    printf("中序遍历为:\n");
+    printf("中序遍历为\n");
 //    InOrder(T);
     InOrder2(T);
 }

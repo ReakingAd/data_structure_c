@@ -4,8 +4,10 @@
 #define STACK_INIT_SIZE 10
 #define STACKINCREMENT 2
 
-#include "common.h"
-#include "/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/common2.h"
+//#include "common.h"
+#include "chapter_6/BiTree/common2.h"
+#include "chapter_6/BiTree/BiTree.h"
+typedef BiTree SElemType;
 
 typedef struct
 {

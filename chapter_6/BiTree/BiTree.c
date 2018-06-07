@@ -42,6 +42,26 @@ void PreOrder(BiTree T){
     }
 }
 /**
+ * 先序遍历非递归算法
+ */
+void PreOrder2(BiTree T){
+    SqStack S;
+    Status s = InitStack(&S);
+    if( !s )
+        exit(OVERFLOW);
+    while( T != NULL || !StackEmpty(S) ){
+        if( T != NULL ){
+            visit(T);
+            Push(&S,T);
+            T = T -> lchild;
+        }
+        else{
+            Pop(&S,&T);
+            T = T -> rchild;
+        }
+    }
+}
+/**
  * 中序遍历递归算法
  */
  void InOrder(BiTree T){
@@ -58,7 +78,8 @@ void PreOrder(BiTree T){
  void InOrder2(BiTree T){
     SqStack S;
     Status s = InitStack(&S);
-    BiTree p;
+    if( !s )
+        exit(OVERFLOW);
     while( T != NULL || !StackEmpty(S) ){
         if( T != NULL ){
             Push(&S,T);
@@ -79,5 +100,40 @@ void PostOrder(BiTree T){
         PostOrder( T -> lchild );
         PostOrder( T -> rchild );
         visit( T );
+    }
+}
+
+/**
+ * 后序遍历非递归算法
+ * 后序非递归相对于先序非递归、中序非递归都要复杂。需要分辨出，在访问栈顶元素时，是刚刚遍历玩左子树，还是左右子树都已经遍历完毕。
+ * 借助一个记忆指针，记录最后一个visit()过的结点，如果栈顶元素的右子树根节点和这个记忆指针指向同一结点，则说明栈顶元素的左右子树
+ * 都已经访问完毕。
+ */
+void PostOrder2(BiTree T){
+    SqStack S;
+    Status s = InitStack(&S);
+    BiTree p = T; // 工作指针
+    BiTree r; // 存放上一个visit()的结点
+    if( !s )
+        exit(OVERFLOW);
+    while( p != NULL || !StackEmpty(S) ){
+        if( p ){
+            Push(&S,p);
+            p = p -> lchild;
+        }
+        else{
+            GetTop(S,&p);
+            if( p -> rchild && p -> rchild != r ){
+                p = p -> rchild;
+                Push(&S,p);
+                p = p -> lchild;
+            }
+            else{
+                Pop(&S,&p);
+                visit(p);
+                r = p;
+                p = NULL;
+            }
+        }
     }
 }

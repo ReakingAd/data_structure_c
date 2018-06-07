@@ -87,20 +87,28 @@
 	"chapter_6/BiTree/common2.h"
 	"chapter_6/BiTree/BiTree.h"
 
-1528336716 source:/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/BiTree.c
+1528340335 source:/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/BiTree.c
 	"BiTree.h"
 	"chapter_3/stack/stack.h"
+	"chapter_3/queue/queue.h"
 
-1528333022 /home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/BiTree.h
+1528340433 /home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/BiTree.h
 	"common2.h"
 
-1528333022 /home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/common2.h
+1528340483 /home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/common2.h
 	<stdio.h>
 	<stdlib.h>
 	<math.h>
 
-1528334946 source:/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/main.c
+1528340543 source:/home/ltvieri/git-repos/data_structure_c/chapter_6/BiTree/main.c
 	<stdio.h>
 	<stdlib.h>
 	"BiTree.h"
+
+1522198111 source:/home/ltvieri/git-repos/data_structure_c/chapter_3/queue/queue.c
+	"queue.h"
+
+1528340485 /home/ltvieri/git-repos/data_structure_c/chapter_3/queue/queue.h
+	"chapter_6/BiTree/common2.h"
+	"chapter_6/BiTree/BiTree.h"
 

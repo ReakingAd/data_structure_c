@@ -1,6 +1,10 @@
 #ifndef _QUEUE_H_
 #define _QUEUE_H_
-#include "common.h"
+//#include "common.h"
+#include "chapter_6/BiTree/common2.h"
+#include "chapter_6/BiTree/BiTree.h"
+
+typedef BiTree QElemType;
 
 struct QNode
 {

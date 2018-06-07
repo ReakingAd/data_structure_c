@@ -31,10 +31,21 @@ void PostOrder_main(){
 //    PostOrder(T);
     PostOrder2(T);
 }
+
+// 层次历算法测试
+void LevelOrder_main(){
+    BiTree T = NULL;
+    // 按照教材中图6.8(b)的二叉树，需要依次键入ABC##DE#G##F###
+    CreateBiTree(&T);
+    printf("层次遍历为:\n");
+    LevelOrder(T);
+}
+
 int main()
 {
 //    InOrder_main();
 //    PreOrder_main();
-    PostOrder_main();
+//    PostOrder_main();
+    LevelOrder_main();
     return 0;
 }

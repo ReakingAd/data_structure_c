@@ -8,4 +8,3 @@
 #define FALSE 0
 
 typedef int Status;
-typedef char TElemType;

@@ -1,6 +1,7 @@
 #include "BiTree.h"
 //#include "../../chapter_3/stack/stack.h"
 #include "chapter_3/stack/stack.h"
+#include "chapter_3/queue/queue.h"
 
 Status InitBiTree(BiTree * T){
     *T = NULL;
@@ -135,5 +136,24 @@ void PostOrder2(BiTree T){
                 p = NULL;
             }
         }
+    }
+}
+/**
+ * 层次遍历二叉树。自上而下，自左而右
+ */
+void LevelOrder( BiTree T ){
+    LinkQueue Q;
+    Status s = InitQueue(&Q);
+    if( !s )
+        exit(OVERFLOW);
+    BiTree p;
+    EnQueue(&Q,T);
+    while( !QueueEmpty(Q) ){
+        DeQueue(&Q,&p);
+        visit(p);
+        if( p -> lchild )
+            EnQueue(&Q,p -> lchild);
+        if( p -> rchild )
+            EnQueue(&Q,p -> rchild);
     }
 }
